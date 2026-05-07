@@ -14,7 +14,7 @@ import {
   Activity, Layers, Eye, ChevronDown, ChevronUp, Link
 } from "lucide-react";
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://resume-builder-d63q.onrender.com";
 
 const theme = createTheme({
   palette: {
@@ -1304,7 +1304,7 @@ function InlineEditor({ field, sc, saving, onApply, onCancel, onDelete, initialS
   if (!text.trim()) return;
   setAiLoading(true); setAiSuggestion(null);
   try {
-    const res = await fetch("http://localhost:8000/ai-rewrite", {
+    const res = await fetch("https://resume-builder-d63q.onrender.com/ai-rewrite", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: text.trim(), mode }),
